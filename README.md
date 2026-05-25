@@ -232,25 +232,29 @@ public/
 
 ## Inicio del sistema
 
-(Pegar captura aquí)
+![Inicio](resources/images/inicio.png)
+
 
 ---
 
 ## NT1 - Introducción a Laravel
 
-(Pegar captura aquí)
+![Rutas](resources/images/nt1rutas.png)
+![NT1](resources/images/nt1prueba.png)
 
 ---
 
 ## NT2 - Rutas y Controladores
 
-(Pegar captura aquí)
+![Middleware](resources/images/nt2middleware.png)
+![NT2](resources/images/nt2prueba.png)
 
 ---
 
 ## NT3 - Blade Templates
 
-(Pegar captura aquí)
+![Blade](resources/images/nt3vistas.png)
+![NT3](resources/images/nt3prueba.png)
 
 ---
 
@@ -284,8 +288,8 @@ public/
 - Requests
 - NT2
 - NT3
-- README
-- Estilos CSS
+- README pt1
+- Estilos CSS pt1
 
 ## Integrante 2
 
@@ -295,6 +299,8 @@ public/
 - NT4
 - NT5
 - Validaciones
+- README pt2
+- Estilos CSS pt2
 
 ---
 
