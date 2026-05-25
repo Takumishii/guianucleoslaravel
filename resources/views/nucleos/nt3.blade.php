@@ -11,8 +11,9 @@
 
     <h3>Directivas principales</h3>
 
-<pre><code>@if($usuario)
-    Bienvenido, {{ $usuario }}
+<pre><code>@verbatim
+@if($titulo)
+    Bienvenido
 @endif
 
 @foreach($productos as $producto)
@@ -25,32 +26,40 @@
     Contenido de la página
 @endsection
 
-@yield('content')</code></pre>
+@yield('content')
+@endverbatim</code></pre>
 
     <h3>Ejemplo de layout</h3>
 
-<pre><code>&lt;html&gt;
-&lt;body&gt;
-    &lt;nav&gt;Menú principal&lt;/nav&gt;
+<pre><code>@verbatim
+<html>
+<body>
+    <nav>Menú principal</nav>
 
     @yield('content')
-&lt;/body&gt;
-&lt;/html&gt;</code></pre>
+</body>
+</html>
+@endverbatim</code></pre>
 
     <h3>Paso de variables desde controlador a vista</h3>
 
-<pre><code>public function index()
+<pre><code>@verbatim
+public function index()
 {
     $titulo = 'Guía Laravel';
 
     return view('home', compact('titulo'));
-}</code></pre>
+}
+@endverbatim</code></pre>
 
     <h3>Resultado en la vista</h3>
 
-<pre><code>&lt;h1&gt;{{ $titulo }}&lt;/h1&gt;</code></pre>
+<pre><code>@verbatim
+<h1>{{ $titulo }}</h1>
+@endverbatim</code></pre>
 
     <h3>CSS y JavaScript en Laravel</h3>
+
     <p>
         Laravel permite integrar CSS y JavaScript mediante archivos en la carpeta public
         o mediante herramientas modernas como Vite.
