@@ -263,6 +263,7 @@ public/
 ![Eloquent](resources/images/nt4Eloquent.png)
 ![NT4](resources/images/nt4prueba.png)
 ![DataBase](resources/images/nt4database.png)
+
 ---
 
 ## NT5 - Formularios y Validaciones
