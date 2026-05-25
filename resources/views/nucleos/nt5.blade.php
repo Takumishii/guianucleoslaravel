@@ -83,5 +83,6 @@
         Si se envían datos incompletos, Laravel muestra los errores de validación.
     </p>
 
+    <a href="{{ route('apuntes.create') }}" class="btn">Probar formulario validado</a>
 </div>
 @endsection
