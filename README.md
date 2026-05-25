@@ -67,7 +67,7 @@ git clone https://github.com/Takumishii/guianucleoslaravel.git
 ## Paso 2 - Ingresar al proyecto
 
 ```bash
-cd evaluacion2laravel
+cd guianucleoslaravel
 ```
 
 ---
@@ -281,6 +281,7 @@ public/
 - Layout principal
 - Navegación
 - NT1
+- Requests
 - NT2
 - NT3
 - README
