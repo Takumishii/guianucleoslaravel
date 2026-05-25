@@ -276,7 +276,10 @@ public/
 
 ## CRUD de apuntes
 
-(Pegar captura aquí)
+![CRUD](resources/images/Crud.png)
+![Ejemplo1](resources/images/crudejemplo1.png)
+![Ejemplo2](resources/images/crudejemplo2.png)
+
 
 ---
 
