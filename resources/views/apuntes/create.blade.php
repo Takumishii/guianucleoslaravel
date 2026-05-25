@@ -12,66 +12,79 @@
     <form method="POST" action="{{ route('apuntes.store') }}">
         @csrf
 
-        <label for="nucleo_id">Núcleo temático</label>
+        <div class="form-group">
+            <label for="nucleo_id">Núcleo temático</label>
 
-        <select name="nucleo_id" id="nucleo_id" required>
-            <option value="" disabled {{ old('nucleo_id') ? '' : 'selected' }} hidden>
-                Seleccione un núcleo temático
-            </option>
-
-            @foreach($nucleos as $nucleo)
-                <option value="{{ $nucleo->id }}" {{ old('nucleo_id') == $nucleo->id ? 'selected' : '' }}>
-                    {{ $nucleo->nombre }}
+            <select name="nucleo_id" id="nucleo_id" required>
+                <option value="" disabled {{ old('nucleo_id') ? '' : 'selected' }} hidden>
+                    Seleccione un núcleo temático
                 </option>
-            @endforeach
-        </select>
 
-        @error('nucleo_id')
-            <div class="error">{{ $message }}</div>
-        @enderror
+                @foreach($nucleos as $nucleo)
+                    <option value="{{ $nucleo->id }}" {{ old('nucleo_id') == $nucleo->id ? 'selected' : '' }}>
+                        {{ $nucleo->nombre }}
+                    </option>
+                @endforeach
+            </select>
 
-        <label for="titulo">Título del apunte</label>
-        <input 
-            type="text" 
-            name="titulo" 
-            id="titulo" 
-            value="{{ old('titulo') }}" 
-            placeholder="Ejemplo: Introducción a las rutas en Laravel"
-        >
+            @error('nucleo_id')
+                <div class="error">{{ $message }}</div>
+            @enderror
+        </div>
 
-        @error('titulo')
-            <div class="error">{{ $message }}</div>
-        @enderror
+        <div class="form-group">
+            <label for="titulo">Título del apunte</label>
 
-        <label for="contenido">Contenido del apunte</label>
-        <textarea 
-            name="contenido" 
-            id="contenido" 
-            rows="6" 
-            placeholder="Escriba aquí la explicación del apunte..."
-        >{{ old('contenido') }}</textarea>
+            <input
+                type="text"
+                name="titulo"
+                id="titulo"
+                value="{{ old('titulo') }}"
+                placeholder="Ejemplo: Introducción a las rutas en Laravel"
+            >
 
-        @error('contenido')
-            <div class="error">{{ $message }}</div>
-        @enderror
+            @error('titulo')
+                <div class="error">{{ $message }}</div>
+            @enderror
+        </div>
 
-        <label for="codigo_ejemplo">Código de ejemplo</label>
-        <textarea 
-            name="codigo_ejemplo" 
-            id="codigo_ejemplo" 
-            rows="6" 
-            placeholder="Ejemplo: Route::get('/inicio', [HomeController::class, 'index']);"
-        >{{ old('codigo_ejemplo') }}</textarea>
+        <div class="form-group">
+            <label for="contenido">Contenido del apunte</label>
 
-        @error('codigo_ejemplo')
-            <div class="error">{{ $message }}</div>
-        @enderror
+            <textarea
+                name="contenido"
+                id="contenido"
+                rows="6"
+                placeholder="Escriba aquí la explicación del apunte..."
+            >{{ old('contenido') }}</textarea>
 
-        <button type="submit" class="btn">Guardar apunte</button>
+            @error('contenido')
+                <div class="error">{{ $message }}</div>
+            @enderror
+        </div>
 
-        <a href="{{ route('apuntes.index') }}" class="btn" style="margin-left: 8px;">
-            Volver al listado
-        </a>
+        <div class="form-group">
+            <label for="codigo_ejemplo">Código de ejemplo</label>
+
+            <textarea
+                name="codigo_ejemplo"
+                id="codigo_ejemplo"
+                rows="6"
+                placeholder="Ejemplo: Route::get('/inicio', [HomeController::class, 'index']);"
+            >{{ old('codigo_ejemplo') }}</textarea>
+
+            @error('codigo_ejemplo')
+                <div class="error">{{ $message }}</div>
+            @enderror
+        </div>
+
+        <div class="form-actions">
+            <button type="submit" class="btn">Guardar apunte</button>
+
+            <a href="{{ route('apuntes.index') }}" class="btn btn-secondary">
+                Volver al listado
+            </a>
+        </div>
     </form>
 </div>
 @endsection
