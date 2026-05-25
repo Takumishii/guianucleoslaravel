@@ -268,7 +268,9 @@ public/
 
 ## NT5 - Formularios y Validaciones
 
-(Pegar captura aquí)
+![Validaciones](resources/images/nt5validaciones.png)
+![NT5-1](resources/images/nt5prueba1.png)
+![NT5-2](resources/images/nt5prueba2.png)
 
 ---
 
