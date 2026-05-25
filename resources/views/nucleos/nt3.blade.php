@@ -34,7 +34,7 @@
 <pre><code>@verbatim
 <html>
 <body>
-    <nav>Menú principal</nav>
+    <nav style="background-color: #747264; color: white; padding: 10px;">Menú principal</nav>
 
     @yield('content')
 </body>

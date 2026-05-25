@@ -6,184 +6,390 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <style>
-        body {
-            margin: 0;
-            font-family: Arial, Helvetica, sans-serif;
-            background: #f4f6f9;
-            color: #222;
-        }
+:root {
+    --bg: #EEEDEB;
+    --accent: #E0CCBE;
+    --muted: #747264;
+    --dark: #3C3633;
 
-        header {
-            background: #143b63;
-            color: white;
-            padding: 20px 40px;
-        }
+    --white: #ffffff;
+    --text: #2f2b29;
+    --text-soft: #5f5b56;
+    --border: #d8d3cf;
+    --light: #f8f7f6;
 
-        header h1 {
-            margin: 0;
-            font-size: 26px;
-        }
+    --danger: #9b3d3d;
+    --danger-bg: #fdeaea;
+}
 
-        header p {
-            margin: 6px 0 0;
-            font-size: 15px;
-        }
+/* ================= BASE ================= */
 
-        nav {
-            background: #0f2d4a;
-            padding: 12px 40px;
-            display: flex;
-            gap: 15px;
-            flex-wrap: wrap;
-        }
+body {
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    background: var(--bg);
+    color: var(--text);
+}
 
-        nav a {
-            color: white;
-            text-decoration: none;
-            font-size: 14px;
-            padding: 8px 12px;
-            border-radius: 6px;
-        }
+/* ================= HEADER ================= */
 
-        nav a:hover {
-            background: #1f5f93;
-        }
+header {
+    background: var(--dark);
+    color: var(--white);
+    padding: 26px 40px;
+    border-bottom: 5px solid var(--accent);
+}
 
-        main {
-            max-width: 1100px;
-            margin: 30px auto;
-            padding: 0 20px;
-        }
+header h1 {
+    margin: 0;
+    font-size: 27px;
+    font-weight: 700;
+}
 
-        .card {
-            background: white;
-            padding: 24px;
-            border-radius: 10px;
-            margin-bottom: 20px;
-            box-shadow: 0 3px 10px rgba(0,0,0,0.08);
-        }
+header p {
+    margin: 6px 0 0;
+    font-size: 15px;
+    color: #e9e6e2;
+}
 
-        h2 {
-            color: #143b63;
-            margin-top: 0;
-        }
+/* ================= NAVBAR ================= */
 
-        h3 {
-            color: #1f5f93;
-        }
+nav {
+    background: var(--white);
+    padding: 14px 40px;
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    border-bottom: 1px solid var(--border);
+    box-shadow: 0 2px 8px rgba(60, 54, 51, 0.08);
+}
 
-        pre {
-            background: #1e1e1e;
-            color: #f8f8f2;
-            padding: 15px;
-            border-radius: 8px;
-            overflow-x: auto;
-            font-size: 14px;
-        }
+nav a {
+    color: var(--dark);
+    text-decoration: none;
+    font-size: 14px;
+    padding: 9px 13px;
+    border-radius: 8px;
+    font-weight: 600;
+    transition: all 0.2s ease;
+}
 
-        code {
-            font-family: Consolas, monospace;
-        }
+nav a:hover {
+    background: var(--accent);
+    color: var(--dark);
+}
 
-        table {
-            width: 100%;
-            border-collapse: collapse;
-            background: white;
-            margin-top: 15px;
-        }
+/* ================= LAYOUT ================= */
 
-        th, td {
-            border: 1px solid #ddd;
-            padding: 12px;
-            text-align: left;
-        }
+main {
+    max-width: 1100px;
+    margin: 32px auto;
+    padding: 0 20px;
+}
 
-        th {
-            background: #143b63;
-            color: white;
-        }
+.card {
+    background: var(--white);
+    padding: 28px;
+    border-radius: 14px;
+    margin-bottom: 22px;
+    border: 1px solid var(--border);
+    box-shadow: 0 4px 14px rgba(60, 54, 51, 0.08);
+}
 
-        .btn {
-            display: inline-block;
-            background: #143b63;
-            color: white;
-            padding: 10px 14px;
-            border-radius: 6px;
-            text-decoration: none;
-            border: none;
-            cursor: pointer;
-            font-size: 14px;
-        }
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 18px;
+}
 
-        .btn:hover {
-            background: #1f5f93;
-        }
+/* ================= TEXTOS ================= */
 
-        .btn-danger {
-            background: #a83232;
-        }
+h2 {
+    color: var(--dark);
+    margin-top: 0;
+    margin-bottom: 12px;
+    font-size: 25px;
+    border-left: 6px solid var(--accent);
+    padding-left: 12px;
+}
 
-        .btn-danger:hover {
-            background: #7d2222;
-        }
+h3 {
+    color: var(--dark);
+    margin-top: 26px;
+    margin-bottom: 10px;
+    border-bottom: 2px solid var(--accent);
+    padding-bottom: 5px;
+}
 
-        input, textarea, select {
-            width: 100%;
-            padding: 10px;
-            margin-top: 6px;
-            margin-bottom: 14px;
-            border: 1px solid #bbb;
-            border-radius: 6px;
-            font-size: 15px;
-        }
+p {
+    line-height: 1.6;
+    color: var(--text);
+}
 
-        label {
-            font-weight: bold;
-        }
+strong {
+    color: var(--dark);
+}
 
-        .error {
-            color: #a83232;
-            font-size: 14px;
-            margin-top: -8px;
-            margin-bottom: 10px;
-        }
+/* ================= BLOQUES DE CÓDIGO ================= */
 
-        .success {
-            background: #d8f3dc;
-            border: 1px solid #95d5b2;
-            padding: 12px;
-            border-radius: 6px;
-            margin-bottom: 20px;
-        }
+pre {
+    background: var(--dark);
+    color: #f8f7f6;
+    padding: 16px;
+    border-radius: 10px;
+    overflow-x: auto;
+    font-size: 14px;
+    line-height: 1.5;
+    border-left: 5px solid var(--accent);
+}
 
-        .grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-            gap: 18px;
-        }
+code {
+    font-family: Consolas, Monaco, monospace;
+}
 
-        .flow {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 10px;
-            align-items: center;
-            margin-top: 20px;
-        }
+/* ================= TABLAS ================= */
 
-        .flow div {
-            background: #143b63;
-            color: white;
-            padding: 14px 18px;
-            border-radius: 8px;
-            font-weight: bold;
-        }
+table {
+    width: 100%;
+    border-collapse: collapse;
+    background: var(--white);
+    margin-top: 15px;
+    border-radius: 10px;
+    overflow: hidden;
+}
 
-        footer {
-            text-align: center;
-            padding: 25px;
-            color: #555;
-            font-size: 13px;
-        }
+th,
+td {
+    border: 1px solid var(--border);
+    padding: 12px;
+    text-align: left;
+    vertical-align: top;
+}
+
+th {
+    background: var(--dark);
+    color: var(--white);
+}
+
+tr:nth-child(even) {
+    background: var(--light);
+}
+
+/* ================= FORMULARIOS ================= */
+
+form {
+    margin-top: 20px;
+}
+
+.form-group {
+    margin-bottom: 18px;
+}
+
+label {
+    display: block;
+    font-weight: 700;
+    margin-bottom: 6px;
+    color: var(--dark);
+}
+
+input,
+textarea,
+select {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 12px 14px;
+    border: 1px solid var(--border);
+    border-radius: 9px;
+    font-size: 15px;
+    font-family: Arial, Helvetica, sans-serif;
+    background: var(--white);
+    color: var(--text);
+    transition: border-color 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+}
+
+input::placeholder,
+textarea::placeholder {
+    color: #9c9792;
+}
+
+input:focus,
+textarea:focus,
+select:focus {
+    outline: none;
+    border-color: var(--muted);
+    background: #fffdfc;
+    box-shadow: 0 0 0 3px rgba(224, 204, 190, 0.55);
+}
+
+textarea {
+    resize: vertical;
+    min-height: 120px;
+}
+
+select {
+    cursor: pointer;
+}
+
+select:invalid {
+    color: #9c9792;
+}
+
+option {
+    color: var(--text);
+}
+
+/* ================= MENSAJES ================= */
+
+.error {
+    color: var(--danger);
+    background: var(--danger-bg);
+    border: 1px solid #f3b7b7;
+    padding: 8px 10px;
+    border-radius: 7px;
+    font-size: 14px;
+    margin-top: 6px;
+}
+
+.success {
+    background: #f3eee9;
+    border: 1px solid var(--accent);
+    color: var(--dark);
+    padding: 12px 14px;
+    border-radius: 9px;
+    margin-bottom: 20px;
+}
+
+/* ================= BOTONES ================= */
+
+.btn {
+    display: inline-block;
+    background: var(--dark);
+    color: var(--white);
+    padding: 10px 15px;
+    border-radius: 8px;
+    text-decoration: none;
+    border: none;
+    cursor: pointer;
+    font-size: 14px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 700;
+    transition: all 0.2s ease;
+}
+
+.btn:hover {
+    background: var(--muted);
+    color: var(--white);
+}
+
+.btn:active {
+    transform: scale(0.98);
+}
+
+.btn-danger {
+    background: #8f3f3f;
+}
+
+.btn-danger:hover {
+    background: #733030;
+}
+
+.btn-secondary {
+    background: var(--muted);
+}
+
+.btn-secondary:hover {
+    background: var(--accent);
+    color: var(--dark);
+}
+
+.form-actions {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    margin-top: 20px;
+}
+
+/* ================= FLUJO MVC ================= */
+
+.flow {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.flow div {
+    background: var(--dark);
+    color: var(--white);
+    padding: 14px 18px;
+    border-radius: 9px;
+    font-weight: bold;
+    box-shadow: 0 3px 9px rgba(60, 54, 51, 0.18);
+}
+
+.flow div:nth-child(even) {
+    background: var(--muted);
+}
+
+/* ================= FOOTER ================= */
+
+footer {
+    text-align: center;
+    padding: 25px;
+    color: var(--text-soft);
+    font-size: 13px;
+}
+
+/* ================= RESPONSIVE ================= */
+
+@media (max-width: 768px) {
+    header {
+        padding: 18px 20px;
+    }
+
+    header h1 {
+        font-size: 22px;
+    }
+
+    nav {
+        padding: 12px 20px;
+        gap: 8px;
+    }
+
+    nav a {
+        font-size: 13px;
+        padding: 8px 10px;
+    }
+
+    main {
+        margin: 20px auto;
+        padding: 0 14px;
+    }
+
+    .card {
+        padding: 20px;
+    }
+
+    table {
+        font-size: 14px;
+    }
+
+    th,
+    td {
+        padding: 9px;
+    }
+
+    .btn {
+        width: 100%;
+        text-align: center;
+        box-sizing: border-box;
+    }
+
+    .form-actions {
+        flex-direction: column;
+    }
+}
     </style>
 </head>
 <body>
